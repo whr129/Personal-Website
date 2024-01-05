@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hongran Wang Personal Website</title>
+    <title>Howard Wang Personal Website</title>
     <link rel="stylesheet" href="./webpage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="./style.css">
@@ -20,9 +20,9 @@
 </style>
 <body>
     <div class="px-4 pt-5 my-5 text-center border-bottom gradient-background">
-        <h1 class="display-4 fw-bold text-body-emphasis">Hongran Wang Profile</h1>
+        <h1 class="display-4 fw-bold text-body-emphasis">Howard Wang Profile</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Hello, I am a first-year cs student in University of Waterloo, interested in algorithm and web development. I love music and watching soccer games in my spare time.</p>
+          <p class="lead mb-4">Hello, I am a first-year cs student in University of Waterloo, interested in algorithm and web development. I love music, playing pool game and watching soccer games in my spare time. I am also seeking for coop from May to Aug</p>
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
           <div class="container px-5">
@@ -31,10 +31,19 @@
         </div>
     </div>
 <div style="text-align: center;">
-    <h2>My Skills</h2>
-    <p>Language: C/C++ Python Java Html Css Javascript Racket</p>
-    <p>Skills:</p>
+  <h2>Skills:</h2>
+  <ul class="list-group">
+    <li>Languages: JavaScript, C/C++, EJS, CSS, HTML, SQL, Python</li>
+    <li>Skills: Node.js, Express.js, jQuery, Bootstrap, Matplotlib, NumPy, Pandas, RESTful API</li>
+    <li>Tools: PostgreSQL, Git, Postman, VSCode</li>
+  </ul>
     <h2>My Research Experience</h2>
+    <p class="fw-bold">Modern Data Visualization of Big Data Online Research				    	Jul 2022 - Sept 2022 </p>
+    <div class="col-lg-6 mx-auto">
+      <p >Acquired skills in data visualization using Matplotlib, complemented by data processing techniques with Pandas and NumPy in a collaborative online research setting.
+      Engaged in a team-based project focused on utilizing Logistic Regression to process and analyze a comprehensive dataset. The project aimed to identify potential indicators of lung cancer.
+      Successfully developed and presented insightful visualizations using Matplotlib, which highlighted key findings and trends relevant to lung cancer symptoms and their implications.</p>
+    </div>
 </div>
 </div>
     <h2 style="text-align: center;">My Education Experience</h2>
@@ -62,11 +71,75 @@
         </div>
       </div>
     <div style="text-align: center;">
-    <h2>Online Education</h2>
-    <p>Udemy online course with certificate: the complete web delopment bootcamp</p>
     <h2>My Project</h2>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text fw-bold">Book Notes</p>
+              <p>			          	   
+                Developed a web application to assist users to manage their reading history and own reflection about books.
+                Created a user-friendly interface with EJS as templating language and bootstrap for responsive design.
+                Using Express.js with Node.js to build the backend server and interact with the database.
+                Stored my data in PostgreSQL and use CRUD methods for efficient data management and sorting.
+                Integrated Axios to send HTTP requests to a public API enabling dynamic retrieval of book covers based on user-submitted book titles.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text fw-bold">Soccer Blog</p>
+              <p>			          	   
+                Developed a web blog enabling users to view existed soccer teams, matches and add, upload, or delete the teams and matches, while users can post new thread and add comments.						
+                Utilized Express.js with Node.js for efficient backend development, handling routing and middleware tasks. Integrated the multer middleware to facilitate image handling and uploads associated with new team entries.
+                EJS was used as the templating engine to generate dynamic HTML based on the blog's state.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text fw-bold">Weather App</p>
+              <p>			          	   
+                Developed a web application to get current weather and give users some advice.
+                Applied JavaScript in backend and EJS in frontend to create a user-friendly interface.
+                Utilized Axios for efficient HTTP communication with a public weather API, fetching and processing JSON data to deliver current weather conditions and a five-day forecast.
+                Handling the error by sending error message and HTTP status.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+    <!-- footer -->
     <div class="container">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -74,7 +147,7 @@
             <li class="nav-item"><a href="https://www.instagram.com/howardwang0315/" class="nav-link px-2 text-body-secondary">Instagram</a></li>
             <li class="nav-item"><a href="https://github.com/whr129" class="nav-link px-2 text-body-secondary">Github</a></li>
           </ul>
-          <p class="text-center text-body-secondary">© Hongran Wang</p>
+          <p class="text-center text-body-secondary">© Howard Wang 2024</p>
         </footer>
       </div>
 </body>
