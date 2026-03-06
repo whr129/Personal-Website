@@ -1,6 +1,10 @@
 # Book Notes
 
-A web application to assist users in managing their reading history and reflections on books.
+A full-stack web application to help users manage their reading history and reflections on books.
+
+## Tech Stack
+
+React, Ant Design, Express.js, Node.js, TypeORM, PostgreSQL, Axios
 
 ## Features
 

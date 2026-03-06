@@ -1,6 +1,10 @@
 # Soccer Blog
 
-A web blog enabling users to view, post, and comment on soccer teams.
+A web blog enabling users to view, post, and comment on soccer teams with role-based access control.
+
+## Tech Stack
+
+Flask, React, Ant Design, PostgreSQL, Redis
 
 ## Features
 

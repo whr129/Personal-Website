@@ -3,6 +3,22 @@
   "tags": { "content": ["projects"], "inherit": true },
   "subdirectories": { "content": [], "inherit": false },
   "files": {
+    "go-wallet.md": {
+      "use_heading_as_title": { "level": 1, "strict": true },
+      "tags": { "content": ["golang", "microservices", "redis", "postgresql", "rabbitmq", "docker"], "inherit": true }
+    },
+    "git-iq.md": {
+      "use_heading_as_title": { "level": 1, "strict": true },
+      "tags": { "content": ["python", "llm", "rag", "chromadb", "fastapi"], "inherit": true }
+    },
+    "revenue-simulator.md": {
+      "use_heading_as_title": { "level": 1, "strict": true },
+      "tags": { "content": ["machine-learning", "python", "streamlit", "aws"], "inherit": true }
+    },
+    "leet-bot.md": {
+      "use_heading_as_title": { "level": 1, "strict": true },
+      "tags": { "content": ["python", "automation"], "inherit": true }
+    },
     "book-notes.md": {
       "use_heading_as_title": { "level": 1, "strict": true },
       "tags": { "content": ["react", "nodejs", "postgresql"], "inherit": true }
