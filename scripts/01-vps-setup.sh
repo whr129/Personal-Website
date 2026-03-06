@@ -11,13 +11,7 @@ echo "=== Phase 1: VPS Server Setup ==="
 echo "[1/4] Running system updates..."
 apt update && apt upgrade -y
 
-echo "[2/4] Configuring UFW firewall..."
-ufw allow OpenSSH
-ufw allow 'Nginx Full'
-ufw --force enable
-ufw status
-
-echo "[3/4] Installing LEMP stack..."
+echo "[2/4] Installing LEMP stack (before firewall so profiles are available)..."
 apt install -y nginx
 systemctl enable nginx
 systemctl start nginx
@@ -32,8 +26,23 @@ apt install -y php8.3-fpm php8.3-mysql php8.3-curl php8.3-gd \
 systemctl enable php8.3-fpm
 systemctl start php8.3-fpm
 
-echo "[4/4] Installing Python 3, pip, and git..."
+echo "[3/5] Installing Python 3, pip, and git..."
 apt install -y python3 python3-pip python3-venv git
+
+echo "[4/5] Installing WP-CLI..."
+if ! command -v wp &> /dev/null; then
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+    mv wp-cli.phar /usr/local/bin/wp
+fi
+wp --info
+
+echo "[5/5] Configuring UFW firewall..."
+ufw allow OpenSSH
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw --force enable
+ufw status
 
 echo ""
 echo "=== Phase 1 Complete ==="

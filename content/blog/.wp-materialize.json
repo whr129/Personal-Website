@@ -1,5 +1,6 @@
 {
   "categories": { "content": ["Blog"], "inherit": true },
+  "subdirectories": { "content": [], "inherit": false },
   "files": {
     "hello-world.md": {
       "use_heading_as_title": { "level": 1, "strict": true }

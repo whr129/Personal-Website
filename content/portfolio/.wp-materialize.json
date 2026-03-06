@@ -1,6 +1,7 @@
 {
   "categories": { "content": ["Portfolio"], "inherit": true },
   "tags": { "content": ["projects"], "inherit": true },
+  "subdirectories": { "content": [], "inherit": false },
   "files": {
     "book-notes.md": {
       "use_heading_as_title": { "level": 1, "strict": true },

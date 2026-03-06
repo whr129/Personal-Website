@@ -8,7 +8,7 @@ set -euo pipefail
 
 echo "=== Phase 4: wp-materialize Setup ==="
 
-echo "[1/3] Cloning and installing wp-materialize..."
+echo "[1/3] Cloning and installing wp-materialize in a virtual environment..."
 cd "${HOME}"
 if [ -d "wp-materialize" ]; then
     echo "wp-materialize directory already exists, pulling latest..."
@@ -17,8 +17,18 @@ else
     git clone https://git.peisongxiao.com/peisongxiao/wp-materialize.git
     cd wp-materialize
 fi
-python3 -m pip install -e .
-python3 -m pip install -r requirements.txt
+python3 -m venv "${HOME}/wp-materialize-venv"
+source "${HOME}/wp-materialize-venv/bin/activate"
+pip install -e .
+pip install -r requirements.txt
+deactivate
+
+echo "Creating wrapper script at /usr/local/bin/wp-materialize..."
+sudo tee /usr/local/bin/wp-materialize > /dev/null <<WRAPPER
+#!/usr/bin/env bash
+exec ${HOME}/wp-materialize-venv/bin/wp-materialize "\$@"
+WRAPPER
+sudo chmod +x /usr/local/bin/wp-materialize
 
 echo "[2/3] Creating repo storage directory..."
 mkdir -p "${HOME}/wp-materialize-repos"
