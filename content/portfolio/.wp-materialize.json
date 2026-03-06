@@ -1,0 +1,14 @@
+{
+  "categories": { "content": ["Portfolio"], "inherit": true },
+  "tags": { "content": ["projects"], "inherit": true },
+  "files": {
+    "book-notes.md": {
+      "use_heading_as_title": { "level": 1, "strict": true },
+      "tags": { "content": ["react", "nodejs", "postgresql"], "inherit": true }
+    },
+    "soccer-blog.md": {
+      "use_heading_as_title": { "level": 1, "strict": true },
+      "tags": { "content": ["flask", "react", "redis"], "inherit": true }
+    }
+  }
+}

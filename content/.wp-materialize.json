@@ -1,0 +1,4 @@
+{
+  "author": { "content": ["1"], "inherit": true },
+  "subdirectories": { "content": ["blog", "portfolio"], "inherit": true }
+}

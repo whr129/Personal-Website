@@ -1,0 +1,8 @@
+{
+  "categories": { "content": ["Blog"], "inherit": true },
+  "files": {
+    "hello-world.md": {
+      "use_heading_as_title": { "level": 1, "strict": true }
+    }
+  }
+}
