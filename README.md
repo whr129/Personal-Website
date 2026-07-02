@@ -1,6 +1,6 @@
 # Howard Wang Portfolio
 
-Static Vite React portfolio for [howardwang129.com](https://howardwang129.com). The site builds to `dist/` and is deployed to an IONOS Ubuntu VPS running Nginx by GitHub Actions.
+Static new Vite React portfolio for [howardwang129.com](https://howardwang129.com). The site builds to `dist/` and is deployed to an IONOS Ubuntu VPS running Nginx by GitHub Actions.
 
 ## Local Development
 
