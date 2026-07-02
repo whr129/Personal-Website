@@ -1,0 +1,66 @@
+name: Deploy portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_PATH: ${{ secrets.IONOS_DEPLOY_PATH || '/var/www/personal-site' }}
+      SSH_PORT: ${{ secrets.IONOS_PORT || '22' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.IONOS_SSH_KEY }}" > ~/.ssh/ionos_deploy_key
+          chmod 600 ~/.ssh/ionos_deploy_key
+          ssh-keyscan -p "$SSH_PORT" "${{ secrets.IONOS_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload release
+        run: |
+          RELEASE_ID="$(date -u +'%Y%m%d%H%M%S')-${GITHUB_SHA::7}"
+          RELEASE_PATH="$DEPLOY_PATH/releases/$RELEASE_ID"
+          echo "RELEASE_ID=$RELEASE_ID" >> "$GITHUB_ENV"
+          echo "RELEASE_PATH=$RELEASE_PATH" >> "$GITHUB_ENV"
+
+          ssh -i ~/.ssh/ionos_deploy_key -p "$SSH_PORT" "${{ secrets.IONOS_USER }}@${{ secrets.IONOS_HOST }}" \
+            "mkdir -p '$RELEASE_PATH' '$DEPLOY_PATH/shared'"
+
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/ionos_deploy_key -p $SSH_PORT" \
+            dist/ "${{ secrets.IONOS_USER }}@${{ secrets.IONOS_HOST }}:$RELEASE_PATH/"
+
+      - name: Activate release
+        run: |
+          ssh -i ~/.ssh/ionos_deploy_key -p "$SSH_PORT" "${{ secrets.IONOS_USER }}@${{ secrets.IONOS_HOST }}" \
+            "set -e
+             ln -sfn '$RELEASE_PATH' '$DEPLOY_PATH/current'
+             sudo systemctl reload nginx
+             cd '$DEPLOY_PATH/releases'
+             ls -1dt */ | tail -n +3 | xargs -r rm -rf"
