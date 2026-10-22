@@ -9,7 +9,9 @@ npm ci
 npm run dev
 ```
 
-Use Node.js 20 or newer. GitHub Actions uses the current LTS release.
+Use Node.js 24.22.1 (LTS), as pinned in `.node-version`. GitHub Actions reads the same file.
+This version includes the [October 21, 2026 Node.js security fixes](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
+Node.js is used for development and builds; Nginx serves the generated static files in production.
 
 Useful checks:
 
